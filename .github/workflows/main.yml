@@ -7,7 +7,7 @@ jobs:
   job1:
   
     runs-on:
-      - codebuild-ghe-cc-approval-${{ github.run_id }}-${{ github.run_attempt }}
+      - codebuild-gh-dylagray-approval-worklfows-${{ github.run_id }}-${{ github.run_attempt }}
       - buildspec-override:true
       - deployment-status-override:true
     environment: prod
