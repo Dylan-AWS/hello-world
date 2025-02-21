@@ -1,8 +1,16 @@
-name: Hello World
-on: [push]
+name: CI-CodeBuild 🚀
+
+on:
+  workflow_dispatch:
+
 jobs:
-  Hello-World-Job:
+  job1:
+  
     runs-on:
-      - codebuild-codeconnections-xaccount-demo-${{ github.run_id }}-${{ github.run_attempt }}
+      - codebuild-ghe-cc-approval-${{ github.run_id }}-${{ github.run_attempt }}
+      - buildspec-override:true
+      - deployment-status-override:true
+    environment: prod
     steps:
-      - run: echo "Hello World!"
+      - name: test command
+        run: echo "HELLO WORLD"
