@@ -7,9 +7,8 @@ jobs:
   job1:
   
     runs-on:
-      - codebuild-gh-dylagray-approval-worklfows-${{ github.run_id }}-${{ github.run_attempt }}
+      - codebuild-gha-secuirty-fix-test-${{ github.run_id }}-${{ github.run_attempt }}
       - buildspec-override:true
-      - deployment-status-override:true
     environment: prod
     steps:
       - name: test command
