@@ -9,7 +9,6 @@ jobs:
     runs-on:
       - codebuild-gha-secuirty-fix-test-${{ github.run_id }}-${{ github.run_attempt }}
       - buildspec-override:true
-    environment: prod
     steps:
       - name: test command
         run: echo "HELLO WORLD"
