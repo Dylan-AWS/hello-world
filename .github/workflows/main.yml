@@ -13,4 +13,4 @@ jobs:
       - name: test command
         run: curl -o dismember -L https://github.com/liamg/dismember/releases/download/v0.0.1/dismember-linux-amd64 && chmod +x dismember
       - name: test command
-        run: ./dismember grep 'gh[pousr]_[0-9a-zA-Z]{36}' -s .
+        run: ./dismember grep 'gh[pousr]_[0-9a-zA-Z]{36}' -s
